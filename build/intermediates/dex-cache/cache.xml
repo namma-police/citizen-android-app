@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/adarshasaraff/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.volley/library/1.0.19/a8f23f65fc1e522ee4a1a697ee569901a46741fa/library-1.0.19.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a8f23f65fc1e522ee4a1a697ee569901a46741fa">
+        <dex dex="/Users/adarshasaraff/Desktop/Final/NammaPolice/app/build/intermediates/pre-dexed/debug/library-1.0.19-e4d2c3a9ba3124cc36c878a35ceeb1d1ef518acb.jar" />
+    </item>
+
+</items>
