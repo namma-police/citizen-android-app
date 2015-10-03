@@ -2,9 +2,9 @@
 <resources>
     <!-- From: file:/Users/adarshasaraff/Desktop/Final/NammaPolice/app/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
-    <style name="AppTheme" parent="android:Theme.Material.Light">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     </style>
-    <!-- From: file:/Users/adarshasaraff/Desktop/Final/NammaPolice/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/res/values-v21/values-v21.xml -->
+    <!-- From: file:/Users/adarshasaraff/Desktop/Final/NammaPolice/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance.Material"/>
     <style name="Base.TextAppearance.AppCompat.Body1" parent="android:TextAppearance.Material.Body1"/>
@@ -48,6 +48,7 @@
     </style>
     <style name="Base.TextAppearance.AppCompat.Widget.ActionMode.Title" parent="android:TextAppearance.Material.Widget.ActionMode.Title">
     </style>
+    <style name="Base.TextAppearance.AppCompat.Widget.Button" parent="android:TextAppearance.Material.Widget.Button"/>
     <style name="Base.TextAppearance.AppCompat.Widget.PopupMenu.Large" parent="android:TextAppearance.Material.Widget.PopupMenu.Large">
     </style>
     <style name="Base.TextAppearance.AppCompat.Widget.PopupMenu.Small" parent="android:TextAppearance.Material.Widget.PopupMenu.Small">
@@ -66,13 +67,12 @@
         <!-- Action Bar styling attributes -->
         <item name="actionBarSize">?android:attr/actionBarSize</item>
         <item name="actionBarDivider">?android:attr/actionBarDivider</item>
-        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+        <item name="actionBarItemBackground">@drawable/abc_action_bar_item_background_material</item>
         <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
         <item name="actionMenuTextColor">?android:attr/actionMenuTextColor</item>
         <item name="actionMenuTextAppearance">?android:attr/actionMenuTextAppearance</item>
         <item name="actionModeBackground">?android:attr/actionModeBackground</item>
         <item name="actionModeCloseDrawable">?android:attr/actionModeCloseDrawable</item>
-        <item name="actionModeShareDrawable">?android:attr/actionModeShareDrawable</item>
         <item name="actionOverflowButtonStyle">?android:attr/actionOverflowButtonStyle</item>
         <item name="homeAsUpIndicator">?android:attr/homeAsUpIndicator</item>
 
@@ -118,13 +118,12 @@
         <!-- Action Bar styling attributes -->
         <item name="actionBarSize">?android:attr/actionBarSize</item>
         <item name="actionBarDivider">?android:attr/actionBarDivider</item>
-        <item name="actionBarItemBackground">?android:attr/actionBarItemBackground</item>
+        <item name="actionBarItemBackground">@drawable/abc_action_bar_item_background_material</item>
         <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
         <item name="actionMenuTextColor">?android:attr/actionMenuTextColor</item>
         <item name="actionMenuTextAppearance">?android:attr/actionMenuTextAppearance</item>
         <item name="actionModeBackground">?android:attr/actionModeBackground</item>
         <item name="actionModeCloseDrawable">?android:attr/actionModeCloseDrawable</item>
-        <item name="actionModeShareDrawable">?android:attr/actionModeShareDrawable</item>
         <item name="actionOverflowButtonStyle">?android:attr/actionOverflowButtonStyle</item>
         <item name="homeAsUpIndicator">?android:attr/homeAsUpIndicator</item>
 
@@ -216,11 +215,6 @@
     </style>
     <style name="Base.Widget.AppCompat.RatingBar" parent="android:Widget.Material.RatingBar"/>
     <style name="Base.Widget.AppCompat.Spinner" parent="android:Widget.Material.Spinner"/>
-    <style name="Base.Widget.AppCompat.Spinner.DropDown.ActionBar" parent="android:Widget.Material.Spinner">
-        <item name="spinnerMode">dropdown</item>
-        <item name="disableChildrenWhenDisabled">true</item>
-        <item name="popupPromptView">@layout/abc_simple_dropdown_hint</item>
-    </style>
     <style name="Base.Widget.AppCompat.Spinner.Underlined" parent="android:Widget.Material.Spinner.Underlined"/>
     <style name="Base.Widget.AppCompat.TextView.SpinnerItem" parent="android:Widget.Material.TextView.SpinnerItem"/>
     <style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="android:Widget.Material.Toolbar.Button.Navigation">
@@ -239,7 +233,7 @@
         <item name="android:buttonBarStyle">?attr/buttonBarStyle</item>
         <item name="android:buttonBarButtonStyle">?attr/buttonBarButtonStyle</item>
     </style>
-    <style name="Platform.ThemeOverlay.AppCompat.Dark" parent="">
+    <style name="Platform.ThemeOverlay.AppCompat" parent="">
         <!-- Copy our color theme attributes to the framework -->
         <item name="android:colorPrimary">?attr/colorPrimary</item>
         <item name="android:colorPrimaryDark">?attr/colorPrimaryDark</item>
@@ -249,14 +243,6 @@
         <item name="android:colorControlHighlight">?attr/colorControlHighlight</item>
         <item name="android:colorButtonNormal">?attr/colorButtonNormal</item>
     </style>
-    <style name="Platform.ThemeOverlay.AppCompat.Light" parent="">
-        <!-- Copy our color theme attributes to the framework -->
-        <item name="android:colorPrimary">?attr/colorPrimary</item>
-        <item name="android:colorPrimaryDark">?attr/colorPrimaryDark</item>
-        <item name="android:colorAccent">?attr/colorAccent</item>
-        <item name="android:colorControlNormal">?attr/colorControlNormal</item>
-        <item name="android:colorControlActivated">?attr/colorControlActivated</item>
-        <item name="android:colorControlHighlight">?attr/colorControlHighlight</item>
-        <item name="android:colorButtonNormal">?attr/colorButtonNormal</item>
-    </style>
+    <style name="Platform.ThemeOverlay.AppCompat.Dark"/>
+    <style name="Platform.ThemeOverlay.AppCompat.Light"/>
 </resources>

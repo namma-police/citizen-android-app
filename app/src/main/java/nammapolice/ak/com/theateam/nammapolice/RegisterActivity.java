@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -23,38 +24,40 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class RegisterActivity extends Activity {
-    Button register_Button,clear_Button;
-    EditText phNo_EditText,name_EditText,password_EditText,rePassword_EditText,email_EditText;
+public class RegisterActivity extends AppCompatActivity {
+    Button register_Button, clear_Button;
+    EditText phNo_EditText, name_EditText, password_EditText, rePassword_EditText, email_EditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        register_Button=(Button) findViewById(R.id.regstr_register_Button);
-        clear_Button=(Button) findViewById(R.id.clear_register_Button);
-        phNo_EditText=(EditText) findViewById(R.id.phNo_register_EditText);
-        name_EditText=(EditText) findViewById(R.id.name_register_EditText);
-        email_EditText=(EditText) findViewById(R.id.email_register_EditText);
-        password_EditText=(EditText) findViewById(R.id.password_register_EditText);
-        rePassword_EditText=(EditText) findViewById(R.id.rePassword_register_EditText);
+        register_Button = (Button) findViewById(R.id.regstr_register_Button);
+        clear_Button = (Button) findViewById(R.id.clear_register_Button);
+        phNo_EditText = (EditText) findViewById(R.id.phNo_register_EditText);
+        name_EditText = (EditText) findViewById(R.id.name_register_EditText);
+        email_EditText = (EditText) findViewById(R.id.email_register_EditText);
+        password_EditText = (EditText) findViewById(R.id.password_register_EditText);
+        rePassword_EditText = (EditText) findViewById(R.id.rePassword_register_EditText);
         register_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-RegisterAsync registerAsync=new RegisterAsync();
+                RegisterAsync registerAsync = new RegisterAsync();
                 registerAsync.execute();
             }
         });
     }
 
     private class RegisterAsync extends AsyncTask<Void, Void, Integer> {
-        String phno,pwd,name,email;
+        String phno, pwd, name, email;
 
         protected void onPreExecute() {
-            phno=phNo_EditText.getText().toString();
-            pwd=password_EditText.getText().toString();
-            name=name_EditText.getText().toString();
-            email=email_EditText.getText().toString();
+            phno = phNo_EditText.getText().toString();
+            pwd = password_EditText.getText().toString();
+            name = name_EditText.getText().toString();
+            email = email_EditText.getText().toString();
         }
+
         //http://namitbehl.net/hackathon/fetch_data.php?update_rider=true&riderID=8002144009&riderSource=ndkjfhnskjfdnsjkddnksJ&riderDestination=nnsfkjdnskjndskjandksjd1s53dsaa1
         protected Integer doInBackground(Void... params) {
             try {
@@ -64,8 +67,8 @@ RegisterAsync registerAsync=new RegisterAsync();
                 connection.setDoOutput(true);
                 connection.setRequestMethod("POST");
 
-                Uri.Builder _data = new Uri.Builder().appendQueryParameter("displayName",name).appendQueryParameter("phone",phno).appendQueryParameter("email", email).
-                appendQueryParameter("password", pwd);
+                Uri.Builder _data = new Uri.Builder().appendQueryParameter("displayName", name).appendQueryParameter("phone", phno).appendQueryParameter("email", email).
+                        appendQueryParameter("password", pwd);
                 BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream(), "UTF-8"));
                 writer.write(_data.build().getEncodedQuery());
                 writer.flush();
@@ -89,9 +92,8 @@ RegisterAsync registerAsync=new RegisterAsync();
                 System.out.print(jsonObj.toString());
                 String results = jsonObj.getString("status");
                 Log.d("results", results);
-                if(results.matches("loggedIn"))
-                {
-                    Intent intent=new Intent(RegisterActivity.this,SOSActivity.class);
+                if (results.matches("loggedIn")) {
+                    Intent intent = new Intent(RegisterActivity.this, SOSActivity.class);
                     startActivity(intent);
                 }
 //                Intent intent=new Intent(LoginActivity.this,SOSActivity.class);
@@ -109,11 +111,10 @@ RegisterAsync registerAsync=new RegisterAsync();
 
             return 1;
         }
+
         protected void onPostExecute(Integer result) {
         }
     }
-
-
 
 
 }

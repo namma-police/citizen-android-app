@@ -2,6 +2,7 @@ package nammapolice.ak.com.theateam.nammapolice;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -14,34 +15,29 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import  com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap map;
     MapView mapView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        mapView=(MapView) findViewById(R.id.MapView);
+        mapView = (MapView) findViewById(R.id.MapView);
         mapView.onCreate(savedInstanceState);
         MapsInitializer.initialize(this);
         // Gets to GoogleMap from the MapView and does initialization stuff
         mapView.getMapAsync(this);
 
-       // mapView.getMapAsync(this);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-//        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-//                .findFragmentById(R.id.map);
-//        mapFragment.getMapAsync(this);
-
-
 
     }
+
     @Override
     public void onResume() {
         mapView.onResume();
@@ -85,7 +81,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         map.getUiSettings().setMyLocationButtonEnabled(false);
         map.setMyLocationEnabled(true);
         LatLng sydney = new LatLng(-34, 151);
-        map= googleMap;
+        map = googleMap;
 
 
         Marker me = map.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney").icon(BitmapDescriptorFactory.fromResource(R.drawable.mapcopmarkerldpi)));
@@ -100,12 +96,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         int padding = 0; // offset from edges of the map in pixels
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
         map.animateCamera(cu);
-       // setCopMarkers(map);
+        // setCopMarkers(map);
 
     }
-    public void setCopMarkers(GoogleMap googleMap){
+
+    public void setCopMarkers(GoogleMap googleMap) {
         LatLng sydney = new LatLng(-34, 151);
-map= googleMap;
+        map = googleMap;
 
 
         Marker me = map.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney").icon(BitmapDescriptorFactory.fromResource(R.drawable.mapcopmarkerldpi)));
@@ -120,6 +117,6 @@ map= googleMap;
         int padding = 0; // offset from edges of the map in pixels
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
         map.animateCamera(cu);
-       // map.moveCamera(CameraUpdateFactory.newLatLngBounds(sydney,70));
+        // map.moveCamera(CameraUpdateFactory.newLatLngBounds(sydney,70));
     }
 }
