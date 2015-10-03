@@ -18,6 +18,9 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -128,16 +131,27 @@ public class SosService extends Service implements LocationListener, GoogleApiCl
 
             }
         };
-        StringRequest request = new StringRequest(Request.Method.POST, "", response, errorListener) {
+
+        StringRequest request = new StringRequest(Request.Method.POST, NammaPolice.SERVER_URL+"/help/request/", response, errorListener) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
+                JSONArray latlangArray= new JSONArray();
+                try {
+                    latlangArray.put(mLocation.getLatitude());
+                    latlangArray.put(mLocation.getLongitude());
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 params.put("userId", userId);
-                params.put("userName", userName);
-                params.put("time", String.valueOf(System.currentTimeMillis()));
-                params.put("lat", String.valueOf(mLocation.getLatitude()));
-                params.put("lng", String.valueOf(mLocation.getLongitude()));
-                params.put("head", String.valueOf(mLocation.getBearing()));
+                params.put("displayName", userName);
+                params.put("coordinates",latlangArray.toString());
+
+               // params.put("time", String.valueOf(System.currentTimeMillis()));
+               // params.put("lat", String.valueOf(mLocation.getLatitude()));
+               // params.put("lng", String.valueOf(mLocation.getLongitude()));
+                //params.put("head", String.valueOf(mLocation.getBearing()));
                 return params;
             }
         };

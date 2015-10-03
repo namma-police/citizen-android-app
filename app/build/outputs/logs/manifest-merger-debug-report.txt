@@ -54,17 +54,17 @@ ADDED from AndroidManifest.xml:13:5
 	android:name
 		ADDED from AndroidManifest.xml:13:22
 uses-permission#nammapolice.ak.com.theateam.nammapolice.MAPS_RECEIVE
-ADDED from AndroidManifest.xml:15:5
+ADDED from AndroidManifest.xml:14:5
 	android:name
-		ADDED from AndroidManifest.xml:15:22
+		ADDED from AndroidManifest.xml:14:22
 permission#nammapolice.ak.com.theateam.nammapolice.MAPS_RECEIVE
-ADDED from AndroidManifest.xml:17:5
+ADDED from AndroidManifest.xml:16:5
 	android:protectionLevel
-		ADDED from AndroidManifest.xml:19:9
-	android:name
 		ADDED from AndroidManifest.xml:18:9
+	android:name
+		ADDED from AndroidManifest.xml:17:9
 application
-ADDED from AndroidManifest.xml:21:5
+ADDED from AndroidManifest.xml:20:5
 MERGED from com.google.android.gms:play-services:8.1.0:19:5
 MERGED from com.google.android.gms:play-services-ads:8.1.0:24:5
 MERGED from com.google.android.gms:play-services-basement:8.1.0:20:5
@@ -175,77 +175,77 @@ MERGED from com.android.support:appcompat-v7:23.0.1:22:5
 MERGED from com.android.support:support-v4:23.0.1:22:5
 MERGED from com.android.support:support-v4:23.0.1:22:5
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:27:9
-	android:label
-		ADDED from AndroidManifest.xml:25:9
-	android:allowBackup
-		ADDED from AndroidManifest.xml:23:9
-	android:icon
-		ADDED from AndroidManifest.xml:24:9
-	android:theme
 		ADDED from AndroidManifest.xml:26:9
-	android:name
-		ADDED from AndroidManifest.xml:22:9
-activity#nammapolice.ak.com.theateam.nammapolice.LoginActivity
-ADDED from AndroidManifest.xml:28:9
 	android:label
-		ADDED from AndroidManifest.xml:30:13
+		ADDED from AndroidManifest.xml:24:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:22:9
+	android:icon
+		ADDED from AndroidManifest.xml:23:9
+	android:theme
+		ADDED from AndroidManifest.xml:25:9
 	android:name
+		ADDED from AndroidManifest.xml:21:9
+activity#nammapolice.ak.com.theateam.nammapolice.LoginActivity
+ADDED from AndroidManifest.xml:27:9
+	android:label
 		ADDED from AndroidManifest.xml:29:13
-intent-filter#android.intent.action.MAIN+android.intent.category.DEFAULT+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:31:13
-action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:32:17
 	android:name
-		ADDED from AndroidManifest.xml:32:25
+		ADDED from AndroidManifest.xml:28:13
+intent-filter#android.intent.action.MAIN+android.intent.category.DEFAULT+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:30:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:31:17
+	android:name
+		ADDED from AndroidManifest.xml:31:25
 category#android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:33:17
+	android:name
+		ADDED from AndroidManifest.xml:33:27
+category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:34:17
 	android:name
 		ADDED from AndroidManifest.xml:34:27
-category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:35:17
-	android:name
-		ADDED from AndroidManifest.xml:35:27
 activity#nammapolice.ak.com.theateam.nammapolice.RegisterActivity
-ADDED from AndroidManifest.xml:38:9
+ADDED from AndroidManifest.xml:37:9
 	android:label
-		ADDED from AndroidManifest.xml:40:13
-	android:name
 		ADDED from AndroidManifest.xml:39:13
+	android:name
+		ADDED from AndroidManifest.xml:38:13
 activity#nammapolice.ak.com.theateam.nammapolice.SOSActivity
-ADDED from AndroidManifest.xml:49:9
+ADDED from AndroidManifest.xml:48:9
 	android:label
-		ADDED from AndroidManifest.xml:51:13
-	android:name
 		ADDED from AndroidManifest.xml:50:13
+	android:name
+		ADDED from AndroidManifest.xml:49:13
 meta-data#com.google.android.geo.API_KEY
-ADDED from AndroidManifest.xml:61:9
+ADDED from AndroidManifest.xml:60:9
 	android:value
-		ADDED from AndroidManifest.xml:63:13
-	android:name
 		ADDED from AndroidManifest.xml:62:13
+	android:name
+		ADDED from AndroidManifest.xml:61:13
 activity#nammapolice.ak.com.theateam.nammapolice.MapsActivity
-ADDED from AndroidManifest.xml:65:9
+ADDED from AndroidManifest.xml:64:9
 	android:label
-		ADDED from AndroidManifest.xml:67:13
-	android:name
 		ADDED from AndroidManifest.xml:66:13
+	android:name
+		ADDED from AndroidManifest.xml:65:13
 service#nammapolice.ak.com.theateam.nammapolice.SosService
-ADDED from AndroidManifest.xml:77:9
+ADDED from AndroidManifest.xml:76:9
 	android:enabled
-		ADDED from AndroidManifest.xml:79:13
-	android:exported
-		ADDED from AndroidManifest.xml:80:13
-	android:name
 		ADDED from AndroidManifest.xml:78:13
-service#nammapolice.ak.com.theateam.nammapolice.SocketService
-ADDED from AndroidManifest.xml:82:9
-	android:enabled
-		ADDED from AndroidManifest.xml:84:13
 	android:exported
-		ADDED from AndroidManifest.xml:85:13
+		ADDED from AndroidManifest.xml:79:13
 	android:name
+		ADDED from AndroidManifest.xml:77:13
+service#nammapolice.ak.com.theateam.nammapolice.SocketService
+ADDED from AndroidManifest.xml:81:9
+	android:enabled
 		ADDED from AndroidManifest.xml:83:13
+	android:exported
+		ADDED from AndroidManifest.xml:84:13
+	android:name
+		ADDED from AndroidManifest.xml:82:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.google.android.gms:play-services:8.1.0:18:5

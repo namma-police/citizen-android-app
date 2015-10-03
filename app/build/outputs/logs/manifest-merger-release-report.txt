@@ -54,17 +54,17 @@ ADDED from AndroidManifest.xml:13:5
 	android:name
 		ADDED from AndroidManifest.xml:13:22
 uses-permission#nammapolice.ak.com.theateam.nammapolice.MAPS_RECEIVE
-ADDED from AndroidManifest.xml:15:5
+ADDED from AndroidManifest.xml:14:5
 	android:name
-		ADDED from AndroidManifest.xml:15:22
+		ADDED from AndroidManifest.xml:14:22
 permission#nammapolice.ak.com.theateam.nammapolice.MAPS_RECEIVE
-ADDED from AndroidManifest.xml:17:5
+ADDED from AndroidManifest.xml:16:5
 	android:protectionLevel
-		ADDED from AndroidManifest.xml:19:9
-	android:name
 		ADDED from AndroidManifest.xml:18:9
+	android:name
+		ADDED from AndroidManifest.xml:17:9
 application
-ADDED from AndroidManifest.xml:21:5
+ADDED from AndroidManifest.xml:20:5
 MERGED from com.google.android.gms:play-services:8.1.0:19:5
 MERGED from com.google.android.gms:play-services-ads:8.1.0:24:5
 MERGED from com.google.android.gms:play-services-basement:8.1.0:20:5
@@ -174,16 +174,18 @@ MERGED from com.android.support:support-v4:23.0.1:22:5
 MERGED from com.android.support:appcompat-v7:23.0.1:22:5
 MERGED from com.android.support:support-v4:23.0.1:22:5
 MERGED from com.android.support:support-v4:23.0.1:22:5
-	android:label
-		ADDED from AndroidManifest.xml:25:9
-	android:allowBackup
-		ADDED from AndroidManifest.xml:23:9
-	android:icon
-		ADDED from AndroidManifest.xml:24:9
-	android:theme
+	android:screenOrientation
 		ADDED from AndroidManifest.xml:26:9
-	android:name
+	android:label
+		ADDED from AndroidManifest.xml:24:9
+	android:allowBackup
 		ADDED from AndroidManifest.xml:22:9
+	android:icon
+		ADDED from AndroidManifest.xml:23:9
+	android:theme
+		ADDED from AndroidManifest.xml:25:9
+	android:name
+		ADDED from AndroidManifest.xml:21:9
 activity#nammapolice.ak.com.theateam.nammapolice.LoginActivity
 ADDED from AndroidManifest.xml:27:9
 	android:label

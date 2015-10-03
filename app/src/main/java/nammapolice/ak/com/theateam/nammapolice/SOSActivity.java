@@ -34,6 +34,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SOSActivity extends AppCompatActivity {
 
@@ -81,10 +82,11 @@ public class SOSActivity extends AppCompatActivity {
                 }
             }
         });
+        HashMap<String, String> current = NammaPolice.getUser(getApplicationContext());
 
         Intent intent = new Intent(this, SosService.class);
-        intent.putExtra("USER_ID", "");
-        intent.putExtra("USER_NAME", "");
+        intent.putExtra("USER_ID", current.get("USER_ID"));
+        intent.putExtra("USER_NAME", current.get("USER_NAME"));
         startService(intent);
         bindService(intent, locationConnection, BIND_AUTO_CREATE);
         registerReceiver(receiver, new IntentFilter(SocketService.BROADCAST_ACTION));
