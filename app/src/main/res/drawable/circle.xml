@@ -100,7 +100,7 @@
             android:color="#FF0000">
             <item android:id="@id/mask2">
                 <shape android:shape="oval">
-                    <solid android:color="#FFBB00" />
+                    <solid android:color="#FF0000" />
                 </shape>
             </item>
             <item>

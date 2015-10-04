@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 
+import java.util.HashMap;
+
 import io.socket.client.IO;
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
@@ -13,7 +15,7 @@ public class SocketService extends Service implements Emitter.Listener {
 
     public static final String BROADCAST_ACTION = "com.nammapolice.socket";
 
-    private static final String EVENT = "";
+    private static  String EVENT = "";
 
     private SocketBinder binder = new SocketBinder();
 
@@ -36,9 +38,11 @@ public class SocketService extends Service implements Emitter.Listener {
 
     @Override
     public void onCreate() {
+        HashMap<String, String> current = NammaPolice.getUser(getApplicationContext());
+        EVENT=current.get("USER_ID")+"-waiting-for-help";
         intent = new Intent(BROADCAST_ACTION);
         try {
-            mSocket = IO.socket(NammaPolice.SERVER_URL + "");
+            mSocket = IO.socket(NammaPolice.SERVER_URL + "/socket.io");
             mSocket.connect();
         } catch (Exception ex) {
         }

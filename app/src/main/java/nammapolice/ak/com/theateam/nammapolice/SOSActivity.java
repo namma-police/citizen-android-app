@@ -17,6 +17,7 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -60,7 +61,14 @@ public class SOSActivity extends AppCompatActivity {
     BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+            String response = intent.getStringExtra("RESPONSE");
 
+            try {
+                JSONObject jsonResult=new JSONObject(response);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 //            if(bound){
 //                sosService.setSendLocation(false);
 //            }
@@ -68,29 +76,52 @@ public class SOSActivity extends AppCompatActivity {
     };
 
     ImageButton callHelp_Button;
+    Button mapNavigator_Button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sos);
         callHelp_Button = (ImageButton) findViewById(R.id.callHelp_sos_Button);
-        callHelp_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (bound) {
-                    sosService.setSendLocation(true);
-                }
-            }
-        });
+        mapNavigator_Button = (Button) findViewById(R.id.mapNavigator_sos_button);
+        Intent intent = new Intent(SOSActivity.this, SosService.class);
         HashMap<String, String> current = NammaPolice.getUser(getApplicationContext());
-
-        Intent intent = new Intent(this, SosService.class);
         intent.putExtra("USER_ID", current.get("USER_ID"));
         intent.putExtra("USER_NAME", current.get("USER_NAME"));
         startService(intent);
         bindService(intent, locationConnection, BIND_AUTO_CREATE);
         registerReceiver(receiver, new IntentFilter(SocketService.BROADCAST_ACTION));
+       mapNavigator_Button.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(SOSActivity.this, MapsActivity.class);
+               startActivity(intent);
+           }
+       });
+
+
+        callHelp_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (bound) {
+
+                    sosService.setSendLocation(true);
+
+
+                }
+            }
+        });
+
+
+
+
     }
 
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver(receiver);
+        unbindService(locationConnection);
+        super.onDestroy();
 
+    }
 }
