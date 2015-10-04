@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/Users/adarshasaraff/Desktop/Final/NammaPolice/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/res/values-v21/values-v21.xml -->
+    <eat-comment/>
+    <dimen name="design_navigation_padding_top_default">24dp</dimen>
     <!-- From: file:/Users/adarshasaraff/Desktop/Final/NammaPolice/app/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
     <!-- From: file:/Users/adarshasaraff/Desktop/Final/NammaPolice/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v21/values-v21.xml -->
     <eat-comment/>

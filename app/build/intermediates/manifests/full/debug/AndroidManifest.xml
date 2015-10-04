@@ -104,6 +104,11 @@
             android:exported="false" >
         </service>
 
+        <activity
+            android:name="nammapolice.ak.com.theateam.nammapolice.IssueActivity"
+            android:label="@string/title_activity_issue"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

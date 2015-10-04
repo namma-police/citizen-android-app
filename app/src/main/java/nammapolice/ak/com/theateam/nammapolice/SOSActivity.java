@@ -3,6 +3,7 @@ package nammapolice.ak.com.theateam.nammapolice;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
@@ -14,6 +15,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.IBinder;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -64,14 +66,55 @@ public class SOSActivity extends AppCompatActivity {
             String response = intent.getStringExtra("RESPONSE");
 
             try {
-                JSONObject jsonResult=new JSONObject(response);
+                JSONObject jsonResult = new JSONObject(response);
+                final String IssueId = jsonResult.getString("issueId");
+                JSONObject policeDetails = jsonResult.getJSONObject("policeDetails");
+                JSONObject location = policeDetails.getJSONObject("location");
+                final String address = location.getString("address");
+                JSONArray coordinates = location.getJSONArray("coordinates");
+                final String latitude = coordinates.get(0).toString();
+                final String longitude = coordinates.get(1).toString();
+                final String PhoneNumber = policeDetails.getString("phone");
+                final String displayName = policeDetails.getString("displayName");
+
+
+
+                if (bound) {
+                    sosService.setSendLocation(false);
+                }
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(SOSActivity.this);
+                // Setting Dialog Title
+                alertDialog.setTitle("Mr/Ms." + displayName + " is coming for your assistance..");
+
+                // Setting Dialog Message
+                alertDialog.setMessage("Be Safe.......");
+
+                // Setting Icon to Dialog
+                alertDialog.setIcon(R.drawable.berunda);
+
+                // Setting Positive "Yes" Button
+                alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // User pressed YES button. Write Logic Here
+                        Intent intents = new Intent(SOSActivity.this, IssueActivity.class);
+                        intents.putExtra("citizenName", displayName);
+                        intents.putExtra("issueId", IssueId);
+                        intents.putExtra("address", address);
+                        intents.putExtra("phone", PhoneNumber);
+                        intents.putExtra("latitude", Double.valueOf(latitude));
+                        intents.putExtra("longitude", Double.valueOf(longitude));
+
+                        startActivity(intents);
+                    }
+                });
+
+                // Showing Alert Message
+                alertDialog.show();
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-//            if(bound){
-//                sosService.setSendLocation(false);
-//            }
+
         }
     };
 
@@ -91,13 +134,13 @@ public class SOSActivity extends AppCompatActivity {
         startService(intent);
         bindService(intent, locationConnection, BIND_AUTO_CREATE);
         registerReceiver(receiver, new IntentFilter(SocketService.BROADCAST_ACTION));
-       mapNavigator_Button.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Intent intent = new Intent(SOSActivity.this, MapsActivity.class);
-               startActivity(intent);
-           }
-       });
+        mapNavigator_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SOSActivity.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         callHelp_Button.setOnClickListener(new View.OnClickListener() {
@@ -111,8 +154,6 @@ public class SOSActivity extends AppCompatActivity {
                 }
             }
         });
-
-
 
 
     }

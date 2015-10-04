@@ -174,8 +174,12 @@ MERGED from com.android.support:support-v4:23.0.1:22:5
 MERGED from com.android.support:appcompat-v7:23.0.1:22:5
 MERGED from com.android.support:support-v4:23.0.1:22:5
 MERGED from com.android.support:support-v4:23.0.1:22:5
+MERGED from com.android.support:design:23.0.1:22:5
+MERGED from com.android.support:support-v4:23.0.1:22:5
+MERGED from com.android.support:appcompat-v7:23.0.1:22:5
+MERGED from com.android.support:support-v4:23.0.1:22:5
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:26:9
+		ADDED from AndroidManifest.xml:25:9
 	android:label
 		ADDED from AndroidManifest.xml:24:9
 	android:allowBackup
@@ -183,7 +187,7 @@ MERGED from com.android.support:support-v4:23.0.1:22:5
 	android:icon
 		ADDED from AndroidManifest.xml:23:9
 	android:theme
-		ADDED from AndroidManifest.xml:25:9
+		ADDED from AndroidManifest.xml:26:9
 	android:name
 		ADDED from AndroidManifest.xml:21:9
 activity#nammapolice.ak.com.theateam.nammapolice.LoginActivity
@@ -246,6 +250,14 @@ ADDED from AndroidManifest.xml:81:9
 		ADDED from AndroidManifest.xml:84:13
 	android:name
 		ADDED from AndroidManifest.xml:82:13
+activity#nammapolice.ak.com.theateam.nammapolice.IssueActivity
+ADDED from AndroidManifest.xml:87:9
+	android:label
+		ADDED from AndroidManifest.xml:89:13
+	android:theme
+		ADDED from AndroidManifest.xml:90:13
+	android:name
+		ADDED from AndroidManifest.xml:88:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.google.android.gms:play-services:8.1.0:18:5
@@ -382,6 +394,10 @@ MERGED from com.google.android.gms:play-services-basement:8.1.0:18:5
 MERGED from com.android.support:support-v4:23.0.1:20:5
 MERGED from com.android.support:appcompat-v7:23.0.1:20:5
 MERGED from com.android.support:support-v4:23.0.1:20:5
+MERGED from com.android.support:support-v4:23.0.1:20:5
+MERGED from com.android.support:design:23.0.1:20:5
+MERGED from com.android.support:support-v4:23.0.1:20:5
+MERGED from com.android.support:appcompat-v7:23.0.1:20:5
 MERGED from com.android.support:support-v4:23.0.1:20:5
 	android:targetSdkVersion
 		INJECTED from AndroidManifest.xml:0:0
