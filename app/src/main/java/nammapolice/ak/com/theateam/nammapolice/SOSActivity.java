@@ -63,8 +63,8 @@ public class SOSActivity extends AppCompatActivity {
     BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            String response = intent.getStringExtra("RESPONSE");
-
+            String response = intent.getStringExtra("RESULT");
+                    System.out.println("Response"+response);
             try {
                 JSONObject jsonResult = new JSONObject(response);
                 final String IssueId = jsonResult.getString("issueId");
@@ -74,7 +74,6 @@ public class SOSActivity extends AppCompatActivity {
                 JSONArray coordinates = location.getJSONArray("coordinates");
                 final String latitude = coordinates.get(0).toString();
                 final String longitude = coordinates.get(1).toString();
-                final String PhoneNumber = policeDetails.getString("phone");
                 final String displayName = policeDetails.getString("displayName");
 
 
@@ -100,7 +99,6 @@ public class SOSActivity extends AppCompatActivity {
                         intents.putExtra("citizenName", displayName);
                         intents.putExtra("issueId", IssueId);
                         intents.putExtra("address", address);
-                        intents.putExtra("phone", PhoneNumber);
                         intents.putExtra("latitude", Double.valueOf(latitude));
                         intents.putExtra("longitude", Double.valueOf(longitude));
 
@@ -125,15 +123,33 @@ public class SOSActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sos);
+
+
         callHelp_Button = (ImageButton) findViewById(R.id.callHelp_sos_Button);
         mapNavigator_Button = (Button) findViewById(R.id.mapNavigator_sos_button);
+
         Intent intent = new Intent(SOSActivity.this, SosService.class);
         HashMap<String, String> current = NammaPolice.getUser(getApplicationContext());
+
+        Intent intents = new Intent(this, SocketService.class);
+
+        intents.putExtra("USER_ID", current.get("USER_ID"));
+        intents.putExtra("USER_NAME", current.get("USER_NAME"));
+        startService(intents);
+
+        registerReceiver(receiver, new IntentFilter(SocketService.BROADCAST_ACTION));
+
         intent.putExtra("USER_ID", current.get("USER_ID"));
         intent.putExtra("USER_NAME", current.get("USER_NAME"));
         startService(intent);
         bindService(intent, locationConnection, BIND_AUTO_CREATE);
-        registerReceiver(receiver, new IntentFilter(SocketService.BROADCAST_ACTION));
+
+
+
+
+        //registerReceiver(receiver, new IntentFilter(SocketService.BROADCAST_ACTION));
+
+
         mapNavigator_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

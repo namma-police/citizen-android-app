@@ -155,8 +155,13 @@ public class SosService extends Service implements LocationListener, GoogleApiCl
                 return params;
             }
         };
-        VolleySingleton.getInstance(this).addToRequest(request);
+      //  VolleySingleton.getInstance(this).addToRequest(request);
+        if ((count % 50) == 0) {
+            VolleySingleton.getInstance(this).addToRequest(request);
+            count = 0;
+        }
+        count++;
     }
-
+    int count;
 
 }

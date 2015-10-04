@@ -98,11 +98,7 @@
             android:enabled="true"
             android:exported="true" >
         </service>
-        <service
-            android:name="nammapolice.ak.com.theateam.nammapolice.SocketService"
-            android:enabled="false"
-            android:exported="false" >
-        </service>
+        <service android:name="nammapolice.ak.com.theateam.nammapolice.SocketService" />
 
         <activity
             android:name="nammapolice.ak.com.theateam.nammapolice.IssueActivity"

@@ -244,20 +244,16 @@ ADDED from AndroidManifest.xml:76:9
 		ADDED from AndroidManifest.xml:77:13
 service#nammapolice.ak.com.theateam.nammapolice.SocketService
 ADDED from AndroidManifest.xml:81:9
-	android:enabled
-		ADDED from AndroidManifest.xml:83:13
-	android:exported
-		ADDED from AndroidManifest.xml:84:13
 	android:name
 		ADDED from AndroidManifest.xml:82:13
 activity#nammapolice.ak.com.theateam.nammapolice.IssueActivity
-ADDED from AndroidManifest.xml:87:9
+ADDED from AndroidManifest.xml:85:9
 	android:label
-		ADDED from AndroidManifest.xml:89:13
+		ADDED from AndroidManifest.xml:87:13
 	android:theme
-		ADDED from AndroidManifest.xml:90:13
-	android:name
 		ADDED from AndroidManifest.xml:88:13
+	android:name
+		ADDED from AndroidManifest.xml:86:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.google.android.gms:play-services:8.1.0:18:5

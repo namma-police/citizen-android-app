@@ -79,10 +79,8 @@
             android:exported="true" >
         </service>
         <service
-            android:name=".SocketService"
-            android:enabled="false"
-            android:exported="false" >
-        </service>
+            android:name=".SocketService"/>
+
 
         <activity
             android:name=".IssueActivity"
